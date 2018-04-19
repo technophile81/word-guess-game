@@ -1,32 +1,28 @@
 // Hangman Game
 // ------------------------------------------------------------------------------------------------------------------------------------
-// (╯°□°）╯︵ ┻━┻
+// (╯°□°）╯︵ ┻━┻ TABLE FLIP
 
 // Establish an object for the entire game.
-
 var hangman = {};
 
 // Display how many wins the user has (starts at 0).
-
 hangman.wins = 0;
 
 // Display how many guesses are remaining (starts at max - 7). 
 // NOTE TO SELF: When declaring an anonymous function, add space between function and opening parenthesis.
-
-hangman.newGame = function () {
+hangman.newRound = function () {
     this.wrongGuessesRemaining = 7; // Resets guesses
     this.lettersTyped = [];  // Declares empty array
-    this.gameStarted = false; // Checks if the user has started the game
+    this.roundStarted = false; // Checks if the user has started the game
     this.selectNewWord(); // Invokes new word from function
 };
 
-hangman.startGame = function () {
+hangman.startRound = function () {
 
-    this.gameStarted = true; // This starts the game.
+    this.roundStarted = true; // This starts the game.
 }
 
 // Select a new word from an array. 
-
 hangman.selectNewWord = function () {
 
     var allWords = [
@@ -43,7 +39,8 @@ hangman.selectNewWord = function () {
     return this.currentWord; // Return the currentWord variable/attribute.
 }
 
-hangman.getWordDisplay = function () { //to return the word current word / letters typed containing a score where the underscores has or hasn't been typed; for every character in the word, check if it's in if it's typed if not  put an underscore
+// Return the word current word / letters typed containing a score where the underscores has or hasn't been typed; for every character in the word, check if it's in if it's typed; if not, put an underscore
+hangman.getWordDisplay = function () { 
     
     var displayWord = ""; // This variable will contain a returned display.
 
@@ -53,6 +50,7 @@ hangman.getWordDisplay = function () { //to return the word current word / lette
             displayWord += " ";
         }
         var letter = this.currentWord.charAt(i);  // Variable is assigning the current character indexed by i.
+        
         if (this.lettersTyped.includes(letter) || this.wrongGuessesRemaining < 1) { // This will show the answer when user runs out of guesses
             displayWord += letter.toUpperCase(); // displayWord letters are uppercase
             
@@ -62,15 +60,25 @@ hangman.getWordDisplay = function () { //to return the word current word / lette
         }
     }
     return displayWord;
+}
 
+// Updates the display to reflect the current state of the game
+hangman.updateDisplay = function () {  
+    document.getElementById("hangman-wins").innerHTML = this.wins; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
+    document.getElementById("hangman-guesses").innerHTML = this.wrongGuessesRemaining;
+    document.getElementById("hangman-letters").innerHTML = this.getWordDisplay();
+    document.getElementById("hangman-loss").innerHTML = this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
 
 }
 
-hangman.handleKey = function (key) { // Invokes handleKey 
+// Invokes handleKey
+hangman.handleKey = function (key) {  
 
-    if (!this.gameStarted) {
+    if (!this.roundStarted) {
         if (key === " ") {
-            this.startGame();
+            // TODO: If this is NOT the first round, invoke newRound before startRound
+            this.startRound();
+            this.updateDisplay();
         }
 
     } else {
@@ -79,25 +87,32 @@ hangman.handleKey = function (key) { // Invokes handleKey
         key = key.toLowerCase(); // This makes user input case irrelevant.
 
         if (!this.lettersTyped.includes(key) && validKeys.includes(key)) { // This means user hasn't typed the key already and it is valid.           
-
             this.lettersTyped.push(key); // This adds the key to the lettersTyped array.
 
             if (!this.currentWord.includes(key)) { // If user inputs wrong guess, wrong guess count goes down.
                 this.wrongGuessesRemaining--;
+                // TODO: if they lost, set roundStarted to false           
+            } else if (!this.getWordDisplay().includes("_")) {
+                this.wins++;
+                this.roundStarted = false;
             }
         }
+
+        this.updateDisplay();
     }
-    console.log(this.getWordDisplay());
 }
 
+
 // A function to handle the keyPress. 
+function onReady () {
+    document.onkeyup = function (event) { // callback to be invoked when the onkeyup event occurs
+        hangman.handleKey(event.key); 
+    };
 
-document.onkeyup = function (event) {
+    hangman.newRound();
+    hangman.updateDisplay();
+}
 
-    hangman.handleKey(event.key);
-
-};
-
-hangman.newGame();
-
+// This needs to be called when the document is ready and not before - e.g. body onLoad
+onReady();
 
