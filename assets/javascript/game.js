@@ -39,16 +39,13 @@ hangman.selectNewWord = function () {
     return this.currentWord; // Return the currentWord variable/attribute.
 }
 
-// Return the word current word / letters typed containing a score where the underscores has or hasn't been typed; for every character in the word, check if it's in if it's typed; if not, put an underscore
+// Return the word current word / letters typed containing a score where the underscores has or hasn't been typed; for every character in the word, check if it's in if it's typed; if not,put an underscore
 hangman.getWordDisplay = function () { 
     
     var displayWord = ""; // This variable will contain a returned display.
 
     for (var i = 0; i < this.currentWord.length; i++) { // This accesses each letter in order.
 
-        if (displayWord.length > 0) { // This adds a space between each letter or underscore, except at the beginning of the word. So first time it loops, it will not execute.
-            displayWord += " ";
-        }
         var letter = this.currentWord.charAt(i);  // Variable is assigning the current character indexed by i.
         
         if (this.lettersTyped.includes(letter) || this.wrongGuessesRemaining < 1) { // This will show the answer when user runs out of guesses
@@ -56,7 +53,6 @@ hangman.getWordDisplay = function () {
             
         } else {
             displayWord += "_"; // This replaces the letter with the underscore. This should be default because user has not yet pressed keys.
-
         }
     }
     return displayWord;
@@ -64,10 +60,10 @@ hangman.getWordDisplay = function () {
 
 // Updates the display to reflect the current state of the game
 hangman.updateDisplay = function () {  
-    document.getElementById("hangman-wins").innerHTML = this.wins; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
-    document.getElementById("hangman-guesses").innerHTML = this.wrongGuessesRemaining;
-    document.getElementById("hangman-letters").innerHTML = this.getWordDisplay();
-    document.getElementById("hangman-loss").innerHTML = this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
+    document.getElementById("hangman-wins").innerHTML = "You have won " + "<br/>" + this.wins + " times"; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
+    document.getElementById("hangman-guesses").innerHTML = "Guesses remaining" + "<br/>" + this.wrongGuessesRemaining;
+    document.getElementById("hangman-letters").innerHTML = "Current Word: " + "<br/>" + this.getWordDisplay();
+    document.getElementById("hangman-typed").innerHTML = "Letters used: " + "<br/>" + this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
 
 }
 
@@ -113,6 +109,5 @@ function onReady () {
     hangman.updateDisplay();
 }
 
-// This needs to be called when the document is ready and not before - e.g. body onLoad
-onReady();
+
 

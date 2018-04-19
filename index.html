@@ -18,20 +18,19 @@
 
 <body>
 
-<!--
-    Themes? Avengers, Board games, LEGO, Pokemon, Sodas, Animals, Mean Girls, Liquids?
+<!--Button I GIVE UP to set wrong guesses to 0 and set round started to false and will call update display? to fail teh round
+    Themes? Avengers, Board games, LEGO, Pokemon, Sodas, Animals, Mean Girls, Liquids? Fonts? Cake vs Pie
 -->
 <div class="container">
         <div class="row">
-          <div class="col-xs-1">
-          </div>
           <div class="col-xs-12">
-            <div class="alert" id="hangman-guesses">
+              <div id="instructions">Press SPACE BAR to begin</div>
+            <div id="hangman-guesses">
                 This is where number of guesses display
             </div>
-            <div class="alert" id="hangman-loss">Oops you lost.</div>
-            <div class="alert" id="hangman-wins">
-                </div>
+            <div id="hangman-status">You lost or won message goes here.</div>
+            <div id="hangman-wins">Display wins counter.</div>
+            <div id="hangman-typed">Display letters typed.</div>
 
             <div id="hangman-letters">
             </div>
