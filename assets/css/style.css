@@ -1,0 +1,62 @@
+body { 
+    background: url(../../assets/images/game-bkgd.jpg) no-repeat;
+    background-size: cover;
+    overflow: auto;
+    font-size: 18px;
+    line-height: 1.8em;
+    color: rgba(255,239,215, 1);
+    font-family: 'Alegreya Sans', sans-serif;
+    border-top: 8px solid rgba(230,77,98, 0.7);
+    padding-top: 30px;
+}
+
+
+
+h1 { 
+    font-family: 'Fredericka the Great', cursive; }
+    h1, .fas {
+    font-size: 3.5em;
+    background: linear-gradient(rgba(230,77,98, 1), rgba(247,186,188, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; 
+    margin-right: 15px;
+    margin-bottom: 15px; 
+}
+
+h2 { 
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 1px;
+    /*border-bottom: 1px solid rgba(255,239,215, 1);*/
+    padding-bottom: 15px;
+
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,239,215, 1);
+    padding-bottom: 15px;
+}
+
+#hangman-guesses {     
+    border-bottom: 1px solid rgba(255,239,215, 1);
+    padding-bottom: 15px;}
+
+#typed-wrapper { 
+    padding: 15px; 
+    background: rgba(120,40,51, 0.8);
+    border: 1px solid rgba(255,239,215, 1);
+}
+    #hangman-typed { letter-spacing: 15px; 
+    }
+
+@media (max-width: 1024px) {
+    body{
+        background: url(../../assets/images/game-bkgd.jpg) no-repeat;
+
+    }
+
+
+}

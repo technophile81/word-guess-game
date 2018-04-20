@@ -9,28 +9,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CMontserrat:500,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:500,700,900%7CFredericka+the+Great" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
 
 <body>
-
-<!--Button I GIVE UP to set wrong guesses to 0 and set round started to false and will call update display? to fail teh round
-    Themes? Avengers, Board games, LEGO, Pokemon, Sodas, Animals, Mean Girls, Liquids? Fonts? Cake vs Pie
--->
 <div class="container">
         <div class="row">
-          <div class="col-xs-12">
-              <div id="instructions">Press SPACE BAR to begin</div>
+          <div class="col-lg-6 col-xs-12">
+            <i class="fas fa-birthday-cake"></i><h1>Cake or Pie?</h1>
+              <h2>Silly human! The answer is always both. But why deny ourselves of all the delicious confections? Let's indulge with a classic game of hangman!</h2>
+              <h3 id="instructions">Press the SPACE BAR to begin.</h3>
             <div id="hangman-guesses">
                 This is where number of guesses display
             </div>
             <div id="hangman-status">You lost or won message goes here.</div>
             <div id="hangman-wins">Display wins counter.</div>
-            <div id="hangman-typed">Display letters typed.</div>
+            <div id="typed-wrapper">Letters Used:<div id="hangman-typed">Display letters typed.</div></div>
 
             <div id="hangman-letters" style="letter-spacing: 3px; ">
             </div>
@@ -39,10 +36,12 @@
               <button type="button" class="btn btn-warning btn-large" id="hangman-reveal">Reveal Answer</button>
             </div>
           </div>
-          <div class="col-xs-1">
-          </div>
+          <div class="col-lg-6 col-xs-12">test</div>
         </div>
-      </div>    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      </div>    
+      
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>

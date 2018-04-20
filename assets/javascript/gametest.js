@@ -25,7 +25,7 @@ hangman.newGame = function () {
     hangman.lettersTyped = [];  // Declares empty array
     hangman.gameStarted = false; // Checks if the user has started the game
     hangman.selectNewWord(); // Invokes new word from function
-    
+
     /* for (var i = 0; i < currentWordTesting; i++) {
         initialUnderscores.push("_ ");
     }*/
@@ -71,6 +71,7 @@ hangman.getWordDisplay = function () { //to return the word current word / lette
         } else {
             displayWord += "_"; // This replaces the letter with the underscore. This should be default because user has not yet pressed keys.
         }
+        
     }
     return displayWord;
 }

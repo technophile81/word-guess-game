@@ -66,17 +66,17 @@ hangman.getWordDisplay = function () {
 // Updates the display to reflect the current state of the game
 hangman.updateDisplay = function () {
     document.getElementById("hangman-wins").innerHTML = "You have won " + "<br/>" + this.wins + " times"; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
-    document.getElementById("hangman-guesses").innerHTML = "Guesses remaining" + "<br/>" + this.wrongGuessesRemaining;
-    document.getElementById("hangman-letters").innerHTML = "Current Word: " + "<br/>" + this.getWordDisplay();
-    document.getElementById("hangman-typed").innerHTML = "Letters used: " + "<br/>" + this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
+    document.getElementById("hangman-guesses").innerHTML = "Guesses remaining" + this.wrongGuessesRemaining;
+    document.getElementById("hangman-letters").innerHTML = "Current Word: " + this.getWordDisplay();
+    document.getElementById("hangman-typed").innerHTML = this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
     if (this.roundsPlayed < 1) {
-        document.getElementById("hangman-status").innerHTML = "Welcome! Press space bar to play "; 
+        document.getElementById("instructions").innerHTML = "Press the SPACE BAR to play!"; 
     } else if (this.roundWon()) {
-        document.getElementById("hangman-status").innerHTML = "Congratulations! Hit Space Bar to play again!";
+        document.getElementById("instructions").innerHTML = "Congratulations! Hit the SPACE BAR to play again!";
     } else if (this.roundLost()) {
-        document.getElementById("hangman-status").innerHTML = "You suck. Hit Space Bar to play again!";
+        document.getElementById("instructions").innerHTML = "You suck. Hit the SPACE BAR to play again!";
     } else { 
-        document.getElementById("hangman-status").innerHTML = "Good luck!";
+        document.getElementById("instructions").innerHTML = "Good luck!";
     }
 };
 
