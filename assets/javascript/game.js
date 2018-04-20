@@ -1,6 +1,6 @@
 // Hangman Game
 // ------------------------------------------------------------------------------------------------------------------------------------
-// (╯°□°）╯︵ ┻━┻ TABLE FLIP
+// (╯°□°）╯︵ ┻━┻ TABLE FLIP BUT I GOT THIS
 
 // Establish an object for the entire game.
 var hangman = {};
