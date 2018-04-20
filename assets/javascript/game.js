@@ -137,7 +137,6 @@ hangman.handleKey = function (key) {
                 }           
             } else if (this.roundWon()) {
                 this.wins++;
-                
                 this.roundStarted = false;
             }
         }

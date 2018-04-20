@@ -7,7 +7,7 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-align: center;
-    border-top: 8px solid rgba(230, 77, 98, 0.7);
+    border-top: 6px solid rgba(230, 77, 98, 0.7);
     padding-top: 30px;
 }
 .stuff {
@@ -60,12 +60,12 @@ border-radius:3%;
 h1 {
     /*font-family: 'Fredericka the Great', cursive;*/
     font-family: 'Rye', cursive;
+    text-transform: uppercase;
 }
-
 h1,
 .fas {
     font-size: 3em;
-    background: linear-gradient(rgba(230, 77, 98, 1), rgba(247, 186, 188, 1));
+    background: linear-gradient(rgba(247, 186, 188, 1), rgba(230, 77, 98, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -104,6 +104,7 @@ h4 { font-weight: 700;}
 }
 
 #hangman-letters { margin-bottom: 30px;}
+
 #typed-wrapper h4 { letter-spacing: 1px; }
 #hangman-typed {
     letter-spacing: 15px;
@@ -111,9 +112,11 @@ h4 { font-weight: 700;}
 
 .hangman-wrapper {
     border-top: 1px solid rgba(255, 239, 215, 1);
+    border-bottom: 1px solid rgba(255, 239, 215, 1);
+
     margin-top: .75rem;
     margin-bottom: .75rem;
-    padding: 15px;
+    padding: 30px;
 }
 #hangman-guesses,
 #hangman-wins { font-size: 42px; font-weight: 900;}
@@ -131,7 +134,7 @@ h4 { font-weight: 700;}
     background-color:rgba(252,157,154, 1);
     border-color: rgba(252,157,154, 1);
 }
-.hangman-controls { margin-bottom: 30px;}
+.hangman-controls { margin: 15px 0;}
 
 @media (max-width: 1024px) {
     body {
