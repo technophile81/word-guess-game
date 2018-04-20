@@ -1,10 +1,10 @@
 body {
     background: url(../../assets/images/game-bkgd.jpg) no-repeat;
     background-size: cover;
-    font-size: 18px;
-    line-height: 1.8em;
-    color: rgba(247, 186, 188, 1);
-    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+    line-height: 2em;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-align: center;
     border-top: 6px solid rgba(230, 77, 98, 0.7);
@@ -14,45 +14,9 @@ body {
 border-radius:3%;
 /*background: linear-gradient(rgba(255,255,255, 0.95), rgba(255,255,255, 0.95));
 */
-
+padding-top: 15px;
 }
 
-/*==================================================
- * Effect 6
- * ===============================================*/
- .effect6
- {
-     position:relative;
-     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
- }
- .effect6:before, .effect6:after
- {
-     content:"";
-     position:absolute;
-     z-index:-1;
-     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
-     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
-     box-shadow:0 0 20px rgba(0,0,0,0.8);
-     top:50%;
-     bottom:0;
-     left:10px;
-     right:10px;
-     -moz-border-radius:100px / 10px;
-     border-radius:100px / 10px;
- }
- .effect6:after
- {
-     right:10px;
-     left:auto;
-     -webkit-transform:skew(8deg) rotate(3deg);
-        -moz-transform:skew(8deg) rotate(3deg);
-         -ms-transform:skew(8deg) rotate(3deg);
-          -o-transform:skew(8deg) rotate(3deg);
-             transform:skew(8deg) rotate(3deg);
- }
- 
 
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { margin-bottom: .75rem; }
@@ -61,16 +25,20 @@ h1 {
     /*font-family: 'Fredericka the Great', cursive;*/
     font-family: 'Rye', cursive;
     text-transform: uppercase;
+    font-size: 2.5em;
+    margin-left: 15px; margin-right: 15px;
+}
+.fas { 
+    font-size: 1.5em;
+    vertical-align: super;
 }
 h1,
 .fas {
-    font-size: 3em;
     background: linear-gradient(rgba(247, 186, 188, 1), rgba(230, 77, 98, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-style: normal;
     padding-top: 0.1em;
     text-shadow: 0.05em 0.05em 0 rgba(255, 255, 255, 0.2);
@@ -79,6 +47,7 @@ h1,
 h2 {
     font-weight: 500;
     font-size: 1em;
+    line-height: 1.8em;
     letter-spacing: 1px;
     /*border-bottom: 1px solid rgba(255,239,215, 1);*/
     padding-bottom: 15px;
@@ -88,26 +57,29 @@ h3 {
     font-size: 1.25em;
     font-weight: 700;
     padding-bottom: 15px;
+    color: rgba(167, 219, 216, 1);
     border-bottom: 1px solid rgba(255, 239, 215, 1);
 }
-h4 { font-weight: 700;}
+h4 { font-weight: 700; font-size: 1em;}
 
 #typed-wrapper {
-    letter-spacing: 6px;
-    font-size: 2.5em;
+    letter-spacing: 8px;
+    font-size: 2em;
     font-weight: 900;
     text-align: center;
     padding: 30px 15px;
     color: rgba(30, 30, 30, 1);
-    background: rgba(167, 219, 216, 1);
+    background: linear-gradient(rgba(167, 219, 216, 0.8), rgba(191,234,217,1));
     text-shadow: 0.07em 0.07em 0 rgba(255, 255, 255, 0.1);
 }
 
 #hangman-letters { margin-bottom: 30px;}
 
-#typed-wrapper h4 { letter-spacing: 1px; }
+#typed-wrapper h4 { letter-spacing: 1px; font-size: 0.5em;}
+
 #hangman-typed {
     letter-spacing: 15px;
+    text-transform: uppercase;
 }
 
 .hangman-wrapper {
@@ -116,20 +88,26 @@ h4 { font-weight: 700;}
 
     margin-top: .75rem;
     margin-bottom: .75rem;
-    padding: 30px;
+    padding: 30px 0;
 }
 #hangman-guesses,
-#hangman-wins { font-size: 42px; font-weight: 900;}
+#hangman-wins { 
+    font-size: 42px; 
+    font-weight: 900;
+    color: rgba(167, 219, 216, 1); }
 
 .btn-warning {
     color: #fff;
     background-color: rgba(230, 77, 98, 1);
     border-color: rgba(230, 77, 98, 1);
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
-.btn-warning:hover {
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
     color: #fff;
     background-color:rgba(252,157,154, 1);
     border-color: rgba(252,157,154, 1);
@@ -138,6 +116,7 @@ h4 { font-weight: 700;}
 
 @media (max-width: 1024px) {
     body {
-        background: url(../../assets/images/game-bkgd.jpg) no-repeat;
+        background: url(../../assets/images/game-bkgd.jpg) no-repeat fixed left top;
+        
     }
 }
