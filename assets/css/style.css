@@ -1,62 +1,140 @@
-body { 
+body {
     background: url(../../assets/images/game-bkgd.jpg) no-repeat;
     background-size: cover;
-    overflow: auto;
     font-size: 18px;
     line-height: 1.8em;
-    color: rgba(255,239,215, 1);
+    color: rgba(247, 186, 188, 1);
     font-family: 'Alegreya Sans', sans-serif;
-    border-top: 8px solid rgba(230,77,98, 0.7);
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    border-top: 8px solid rgba(230, 77, 98, 0.7);
     padding-top: 30px;
 }
+.stuff {
+border-radius:3%;
+/*background: linear-gradient(rgba(255,255,255, 0.95), rgba(255,255,255, 0.95));
+*/
 
-
-
-h1 { 
-    font-family: 'Fredericka the Great', cursive; }
-    h1, .fas {
-    font-size: 3.5em;
-    background: linear-gradient(rgba(230,77,98, 1), rgba(247,186,188, 1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block; 
-    margin-right: 15px;
-    margin-bottom: 15px; 
 }
 
-h2 { 
+/*==================================================
+ * Effect 6
+ * ===============================================*/
+ .effect6
+ {
+     position:relative;
+     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }
+ .effect6:before, .effect6:after
+ {
+     content:"";
+     position:absolute;
+     z-index:-1;
+     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     top:50%;
+     bottom:0;
+     left:10px;
+     right:10px;
+     -moz-border-radius:100px / 10px;
+     border-radius:100px / 10px;
+ }
+ .effect6:after
+ {
+     right:10px;
+     left:auto;
+     -webkit-transform:skew(8deg) rotate(3deg);
+        -moz-transform:skew(8deg) rotate(3deg);
+         -ms-transform:skew(8deg) rotate(3deg);
+          -o-transform:skew(8deg) rotate(3deg);
+             transform:skew(8deg) rotate(3deg);
+ }
+ 
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { margin-bottom: .75rem; }
+
+h1 {
+    /*font-family: 'Fredericka the Great', cursive;*/
+    font-family: 'Emilys Candy', cursive;
+}
+
+h1,
+.fas {
+    font-size: 3em;
+    background: linear-gradient(rgba(230, 77, 98, 1), rgba(247, 186, 188, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-style: normal;
+    padding-top: 0.1em;
+    text-shadow: 0.05em 0.05em 0 rgba(255, 255, 255, 0.2);
+}
+
+h2 {
     font-weight: 500;
     font-size: 1em;
     letter-spacing: 1px;
     /*border-bottom: 1px solid rgba(255,239,215, 1);*/
     padding-bottom: 15px;
-
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 700;
-    border-bottom: 1px solid rgba(255,239,215, 1);
     padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 239, 215, 1);
+}
+h4 { font-weight: 700;}
+
+#typed-wrapper {
+    letter-spacing: 6px;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-align: center;
+    padding: 30px 15px;
+    color: rgba(30, 30, 30, 1);
+    background: rgba(167, 219, 216, 1);
+    text-shadow: 0.07em 0.07em 0 rgba(255, 255, 255, 0.1);
 }
 
-#hangman-guesses {     
-    border-bottom: 1px solid rgba(255,239,215, 1);
-    padding-bottom: 15px;}
-
-#typed-wrapper { 
-    padding: 15px; 
-    background: rgba(120,40,51, 0.8);
-    border: 1px solid rgba(255,239,215, 1);
+#hangman-letters { margin-bottom: 30px;}
+#typed-wrapper h4 { letter-spacing: 1px; }
+#hangman-typed {
+    letter-spacing: 15px;
 }
-    #hangman-typed { letter-spacing: 15px; 
-    }
+
+.hangman-wrapper {
+    border-top: 1px solid rgba(255, 239, 215, 1);
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    padding: 15px;
+}
+#hangman-guesses,
+#hangman-wins { font-size: 42px; font-weight: 900;}
+
+.btn-warning {
+    color: #fff;
+    background-color: rgba(230, 77, 98, 1);
+    border-color: rgba(230, 77, 98, 1);
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color:rgba(252,157,154, 1);
+    border-color: rgba(252,157,154, 1);
+}
+.hangman-controls { margin-bottom: 30px;}
 
 @media (max-width: 1024px) {
-    body{
+    body {
         background: url(../../assets/images/game-bkgd.jpg) no-repeat;
-
     }
-
-
 }

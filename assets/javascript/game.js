@@ -27,12 +27,34 @@ hangman.startRound = function () {
 hangman.selectNewWord = function () {
 
     var allWords = [
-        "avengers",
-        "thor",
-        "ironman",
-        "thanos",
-        "nickfury",
-        "spiderman"
+        "wafer",
+        "cheesecake",
+        "tart",
+        "donut",
+        "pudding",
+        "cupcake",
+        "brownie",
+        "applepie",
+        "macaroon",
+        "chocolate",
+        "danish",
+        "tiramisu",
+        "marzipan",
+        "souffle",
+        "bearclaw",
+        "redvelvet",
+        "fruitcake",
+        "cookie",
+        "bonbon",
+        "gingersnap",
+        "sugarplum",
+        "toffee",
+        "licorice",
+        "cherry pie",
+        "caramel",
+        "muffin",
+        "meringue",
+        "croissant"        
     ];
 
     this.currentWord = allWords[Math.floor(Math.random() * allWords.length)]; // Current word is randomly generated through this formula
@@ -65,9 +87,9 @@ hangman.getWordDisplay = function () {
 
 // Updates the display to reflect the current state of the game
 hangman.updateDisplay = function () {
-    document.getElementById("hangman-wins").innerHTML = "You have won " + "<br/>" + this.wins + " times"; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
-    document.getElementById("hangman-guesses").innerHTML = "Guesses remaining" + this.wrongGuessesRemaining;
-    document.getElementById("hangman-letters").innerHTML = "Current Word: " + this.getWordDisplay();
+    document.getElementById("hangman-wins").innerHTML = this.wins; // + " / " + this.totalRounds; // incrememnt totalRounds in startRound
+    document.getElementById("hangman-guesses").innerHTML = this.wrongGuessesRemaining;
+    document.getElementById("hangman-letters").innerHTML = this.getWordDisplay();
     document.getElementById("hangman-typed").innerHTML = this.lettersTyped.join(""); // This method on an array will by default concatenate all items with a comma, but it takes one argument to override this to be any other string to use as the glue - including an empty string.
     if (this.roundsPlayed < 1) {
         document.getElementById("instructions").innerHTML = "Press the SPACE BAR to play!"; 
@@ -76,7 +98,7 @@ hangman.updateDisplay = function () {
     } else if (this.roundLost()) {
         document.getElementById("instructions").innerHTML = "You suck. Hit the SPACE BAR to play again!";
     } else { 
-        document.getElementById("instructions").innerHTML = "Good luck!";
+        document.getElementById("instructions").innerHTML = "Good luck! Guess by typing letters on your keyboard.";
     }
 };
 
