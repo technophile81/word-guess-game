@@ -158,6 +158,7 @@ document.onkeyup = function (event) { // callback to be invoked when the onkeyup
 
 document.getElementById("hangman-reveal").onclick = function (event) { 
     hangman.handleReveal();
+    document.getElementById("hangman-reveal").blur();
 };
 
 hangman.newRound();
