@@ -1,6 +1,6 @@
 # Hangman
 
-##Cake or Pie?
+## Cake or Pie?
 
 A classic hangman game created from vanilla JavaScript, HTML, CSS. An exercise in using key events to listen and respond to user input. The word to guess is represented by a row of dashes, giving the number of letters.
 
